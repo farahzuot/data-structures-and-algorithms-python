@@ -1,3 +1,8 @@
+|challenge|pull request|
+|---|---|
+|challenge-1|https://github.com/farahzuot/data-structures-and-algorithms-python/pull/1|
+|challenge-2|https://github.com/farahzuot/data-structures-and-algorithms-python/pull/2|
+
 # Reverse an Array
 
 ## this function will reverse the array
