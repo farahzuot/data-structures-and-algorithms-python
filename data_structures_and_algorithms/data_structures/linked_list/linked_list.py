@@ -39,7 +39,3 @@ class Linked_list:
 
 if __name__ == "__main__":
     pass
-    # data = Node(3)
-    # data2 = Node(4)
-    # data2.next = data
-    # c = Linked_list()
