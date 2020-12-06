@@ -33,6 +33,48 @@ def test_includes_false(a_value):
     '''
     assert a_value.includes('farah') == False
 
+def test_append():
+    '''
+    this function will add a node to the end of the linked list
+    '''
+    a = Linked_list()
+    a.append(2)
+    assert a.__str__() == '{2}->NULL'
+
+
+def test_append_multi(b_value):
+    '''
+    this function will add multiple nodes to the end of the linked list
+    '''
+    assert b_value.__str__() == '{2}->{3}->{4}->NULL'
+
+def test_insert_before_middle(b_value):
+    '''
+    this function will insert a node before a node located i the middle of a linked list
+    '''
+    b_value.insertBefore(3,5)
+    assert b_value.__str__() == '{2}->{5}->{3}->{4}->NULL'
+
+def test_insert_before_first(b_value):
+    '''
+    this function will insert a node before the first node of a linked list
+    '''
+    b_value.insertBefore(2,5)
+    assert b_value.__str__() == '{5}->{2}->{3}->{4}->NULL'
+
+def test_insert_after_middle(b_value):
+    '''
+    this function will insert after a node in the middle of the linked list
+    '''
+    b_value.insertAfter(3,5)
+    assert b_value.__str__() == '{2}->{3}->{5}->{4}->NULL'
+
+def test_insert_after_last(b_value):
+    '''
+    this function will insert a node after the last node of the linked list
+    '''
+    b_value.insertAfter(4,5)
+    assert b_value.__str__() == '{2}->{3}->{4}->{5}->NULL'
 
 @pytest.fixture
 def a_value():
@@ -40,3 +82,11 @@ def a_value():
     a.insert('Hello')
     a.insert('world')
     return a
+
+@pytest.fixture
+def b_value():
+    b = Linked_list()
+    b.append(2)
+    b.append(3)
+    b.append(4)
+    return b
