@@ -52,3 +52,18 @@ writing two classes the Node and the Linked_list, so with applying some function
 ## Solution
 
 ![whiteboard](data_structures_and_algorithms/assets/linked-list.png)
+
+## Linked-list-part2
+
+this python code will add three methods to the linkedList class, append, insertBefore and insertAfter
+
+## Challenge Description
+
+each method have some line codes to get the result as required, they will be describe further more in the whiteboard
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+
+![whiteboard](data_structures_and_algorithms/assets/linked-list2.png)
