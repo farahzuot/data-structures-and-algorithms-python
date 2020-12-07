@@ -67,3 +67,18 @@ each method have some line codes to get the result as required, they will be des
 ## Solution
 
 ![whiteboard](data_structures_and_algorithms/assets/linked-list2.png)
+
+## Linked-list-part3
+
+this python code will add method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
+
+## Challenge Description
+
+the method called kthFromEnd, it is take in k which is the index from the end and return the value of that index.
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+
+![whiteboard](data_structures_and_algorithms/assets/linked-list3.png)
