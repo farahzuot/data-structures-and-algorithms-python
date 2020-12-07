@@ -76,6 +76,61 @@ def test_insert_after_last(b_value):
     b_value.insertAfter(4,5)
     assert b_value.__str__() == '{2}->{3}->{4}->{5}->NULL'
 
+
+def test_kthFromEnd_out_of_range():
+    '''
+    this case Where k is greater than the length of the linked list
+    '''
+    index = Linked_list() 
+    index.append(1)
+    index.append(2)
+    assert index.kthFromEnd(3) == '3 is out of the range'
+
+def test_kthFromEnd_k_equal_listLen():
+    '''
+    this case Where k and the length of the list are the same
+    '''
+    index = Linked_list() 
+    index.append(1)
+    index.append(2)
+    assert index.kthFromEnd(2) == '2 is out of the range'
+
+def test_kthFromEnd_k_negative():
+    '''
+    this case Where k is a negative int
+    '''
+    index = Linked_list() 
+    index.append(1)
+    index.append(2)
+    assert index.kthFromEnd(-1) == 1
+
+def test_kthFromEnd_k_not_int():
+    '''
+    this case Where k is not an int
+    '''
+    index = Linked_list() 
+    index.append(1)
+    index.append(2)
+    assert index.kthFromEnd('2') == 'invalid input'
+
+def test_kthFromEnd_list_size_one():
+    '''
+    this case Where the linked list is of a size 1
+    '''
+    index = Linked_list() 
+    index.append(1)
+    assert index.kthFromEnd(0) == 1
+
+def test_kthFromEnd_happy_path():
+    '''
+    this case where k is not at the end, but somewhere in the middle of the linked list
+    '''
+    index = Linked_list() 
+    index.append(1)
+    index.append(2)
+    index.append(3)
+    assert index.kthFromEnd(1) == 2
+
 @pytest.fixture
 def a_value():
     a = Linked_list()

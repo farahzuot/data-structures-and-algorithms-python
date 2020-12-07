@@ -83,6 +83,22 @@ class Linked_list:
                 current = current.next # to move through the list until it met the condition "current.next.value == val"
 
 
+    def kthFromEnd(self,k):
+        current = self.head
+        new_list = []
+        if current == None:
+            return 'this is an empty list'
+        try:
+            while current != None:
+                new_list.append(current.value)
+                current = current.next
+            formatted_list = new_list[::-1]
+            return formatted_list[k]
+        except IndexError:
+            return f'{k} is out of the range'
+        except TypeError:
+            return 'invalid input'
+
                  
     def __str__(self):
         current=self.head
@@ -99,4 +115,9 @@ class Linked_list:
 
 
 if __name__ == "__main__":
-    pass
+    a = Linked_list()
+    a.append(2)
+    a.append(3)
+    a.append(4)
+    #print(a.__str__())
+    print(a.kthFromEnd('-1'))
