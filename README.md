@@ -4,6 +4,9 @@
 |challenge-2|https://github.com/farahzuot/data-structures-and-algorithms-python/pull/2|
 |challenge-2|https://github.com/farahzuot/data-structures-and-algorithms-python/pull/3|
 |challenge-2|https://github.com/farahzuot/data-structures-and-algorithms-python/pull/4|
+|challenge-2|https://github.com/farahzuot/data-structures-and-algorithms-python/pull/5|
+|challenge-2|https://github.com/farahzuot/data-structures-and-algorithms-python/pull/6|
+|challenge-2|https://github.com/farahzuot/data-structures-and-algorithms-python/pull/7|
 
 
 # Reverse an Array
