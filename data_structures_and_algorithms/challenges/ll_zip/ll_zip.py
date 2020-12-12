@@ -1,4 +1,4 @@
-# import data_structures_and_algorithms.data_structures.linked_list.linked_list
+# from data_structures_and_algorithms.data_structures.linked_list.linked_list import Linked_list
 
 def zipLists(first_l,sec_l):
     if type(first_l) != list or type(sec_l) != list:
