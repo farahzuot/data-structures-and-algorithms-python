@@ -107,17 +107,55 @@ class Linked_list:
             return 'Empty List'
         else:
             while current:
-                result += f'{{{current.value}}}->'
+                result += f'{[current.value]}->'
                 current=current.next   
             result += f'NULL'
         return result
 
 
+def zipLists(first_l,sec_l):
+    first_l_modified = first_l.split('->')
+    sec_l_modified = sec_l.split('->')
+    sec_l_modified.pop()
+    first_l_modified.pop()
+    a=len(first_l_modified)+len(sec_l_modified)
+    n=0
+    count=1
+    t=True
+    while True:
+        if t:
+            first_l_modified.insert(count,sec_l_modified[n])
+            count+=1
+            n+=1
+            t=False
+        else:
+            first_l_modified.insert(count+n,sec_l_modified[n])
+            count+=1
+            n+=1
+
+        if len(first_l_modified) == a:
+            result=''
+            for i in first_l_modified:
+                result+=f'{i} -> '
+            result+='Null'
+            return result
+
 
 if __name__ == "__main__":
+
+    pass
     a = Linked_list()
     a.append(2)
     a.append(3)
     a.append(4)
-    #print(a.__str__())
-    print(a.kthFromEnd('-1'))
+    first_list=a.__str__()
+    b = Linked_list()
+    b.append(5)
+    b.append(6)
+    b.append(7)
+    sec_list=b.__str__()
+    print(first_list)
+    print(sec_list)
+
+    print(zipLists(first_list,sec_list))
+ 
