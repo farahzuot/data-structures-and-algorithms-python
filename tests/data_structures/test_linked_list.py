@@ -1,4 +1,4 @@
-from data_structures_and_algorithms.data_structures.linked_list.linked_list import Linked_list
+from data_structures_and_algorithms.data_structures.linked_list.linked_list import Linked_list,zipLists
 import pytest
 
 
@@ -17,7 +17,7 @@ def test_insert(a_value):
     '''
     this function is to insert multiple values into the linked list.
     '''
-    assert a_value.__str__() == '{world}->{Hello}->NULL'
+    assert a_value.__str__() == '[\'world\']->[\'Hello\']->NULL'
 
 
 def test_includes(a_value):
@@ -39,42 +39,42 @@ def test_append():
     '''
     a = Linked_list()
     a.append(2)
-    assert a.__str__() == '{2}->NULL'
+    assert a.__str__() == '[2]->NULL'
 
 
 def test_append_multi(b_value):
     '''
     this function will add multiple nodes to the end of the linked list
     '''
-    assert b_value.__str__() == '{2}->{3}->{4}->NULL'
+    assert b_value.__str__() == '[2]->[3]->[4]->NULL'
 
 def test_insert_before_middle(b_value):
     '''
     this function will insert a node before a node located i the middle of a linked list
     '''
     b_value.insertBefore(3,5)
-    assert b_value.__str__() == '{2}->{5}->{3}->{4}->NULL'
+    assert b_value.__str__() == '[2]->[5]->[3]->[4]->NULL'
 
 def test_insert_before_first(b_value):
     '''
     this function will insert a node before the first node of a linked list
     '''
     b_value.insertBefore(2,5)
-    assert b_value.__str__() == '{5}->{2}->{3}->{4}->NULL'
+    assert b_value.__str__() == '[5]->[2]->[3]->[4]->NULL'
 
 def test_insert_after_middle(b_value):
     '''
     this function will insert after a node in the middle of the linked list
     '''
     b_value.insertAfter(3,5)
-    assert b_value.__str__() == '{2}->{3}->{5}->{4}->NULL'
+    assert b_value.__str__() == '[2]->[3]->[5]->[4]->NULL'
 
 def test_insert_after_last(b_value):
     '''
     this function will insert a node after the last node of the linked list
     '''
     b_value.insertAfter(4,5)
-    assert b_value.__str__() == '{2}->{3}->{4}->{5}->NULL'
+    assert b_value.__str__() == '[2]->[3]->[4]->[5]->NULL'
 
 
 def test_kthFromEnd_out_of_range():
@@ -145,3 +145,66 @@ def b_value():
     b.append(3)
     b.append(4)
     return b
+
+
+def test_happy_path():
+    '''
+    this function will test the normal path
+    '''
+    a = Linked_list()
+    a.append(2)
+    a.append(3)
+    a.append(4)
+    first_list=a.__str__()
+    b = Linked_list()
+    b.append(5)
+    b.append(6)
+    b.append(7)
+    sec_list=b.__str__()
+
+    actual = zipLists(first_list,sec_list)
+    expected = '[2] -> [5] -> [3] -> [6] -> [4] -> [7] -> Null'
+    assert actual == expected
+
+
+def test_listTwo_longer_than_listOne():
+    '''
+    this function will test if the second list longer than the first list
+    '''
+    a = Linked_list()
+    a.append(2)
+    a.append(3)
+    a.append(4)
+    first_list=a.__str__()
+    b = Linked_list()
+    b.append(5)
+    b.append(6)
+    b.append(7)
+    b.append(8)
+    b.append(9)
+    sec_list=b.__str__()
+
+    actual = zipLists(first_list,sec_list)
+    expected = '[2] -> [5] -> [3] -> [6] -> [4] -> [7] -> [8] -> [9] -> Null'
+    assert actual == expected
+
+def test_listOne_longer_than_listTwo():
+    '''
+    this function will test if the first list longer than the second list
+    '''
+    a = Linked_list()
+    a.append(2)
+    a.append(3)
+    a.append(4)
+    a.append(12)
+    a.append(14)
+    first_list=a.__str__()
+    b = Linked_list()
+    b.append(5)
+    b.append(6)
+    b.append(7)
+    sec_list=b.__str__()
+
+    actual = zipLists(first_list,sec_list)
+    expected = '[2] -> [5] -> [3] -> [6] -> [4] -> [7] -> [12] -> [14] -> Null'
+    assert actual == expected
