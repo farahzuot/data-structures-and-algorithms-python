@@ -6,10 +6,12 @@ class Node:
 class Stack:
     def __init__(self): # Node1 - > Node 2
         self.top = None
+        self.arr = []
     
 
     def push(self,data):
         node = Node(data)
+        self.arr.append(node.value)
         if self.top == None:
             self.top = node
         else:
@@ -34,7 +36,16 @@ class Stack:
             return False
         else:
             return True
-  
+    
+    def max(self):
+        print(self.arr)
+        max = 0
+        for i in self.arr:
+            if i > max:
+                max=i
+        print(max)
+        return max
+
 
     def __str__(self):
         result = ''
@@ -100,7 +111,7 @@ class Queue:
 
 if __name__ == "__main__":
     pass
-    # a = Stack()
+    a = Stack()
     # b = Queue()
     # print(b.isEmpty())
     # b.enqueue(1)
@@ -112,13 +123,14 @@ if __name__ == "__main__":
     # b.dequeue()
     # b.dequeue()
     # print(b.__str__())
-    # a.push(1)
-    # a.push(2)
-    # a.push(8)
+    a.push(1)
+    a.push(2)
+    a.push(8)
+    a.push(3)
     # print(a.isEmpty())
     # a.pop()
     # print(a.peek())
-    # print(a.__str__())
+    a.max()
 
   
 
