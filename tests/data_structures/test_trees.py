@@ -54,3 +54,15 @@ def test_single_tree_postorder():
     bt.root.left=Node(3)
     bt.root.right=Node(4)
     assert bt.postOrder() == [3,4,2]
+
+
+def test_max_binary_tree():
+    bt = BinaryTree()
+    bt.root = Node(6)
+    bt.root.left = Node(5)
+    bt.root.right = Node(-1)
+    bt.root.right.left = Node(8)
+    bt.root.right.right = Node(14)
+  
+    assert bt.find_maximum_value() == 14
+
