@@ -51,11 +51,26 @@ class BinaryTree():
             return result
         except AttributeError:
             return []
+   
+    def find_maximum_value(self):
+        try:
+            result = []
+            result.append(0)
+            def internal(node):
+                if node.value > result[0]:
+                    result[0] = node.value
+                if node.left:
+                    internal(node.left)
+                if node.right:
+                    internal(node.right)
+            internal(self.root)
+            return result[0]
+        except AttributeError:
+            return []
+
 
 
 class BinarySearchTree(BinaryTree):
-
-    
     def add(self,value):
         self.arr.append(value)
         if self.root == None:
@@ -89,12 +104,14 @@ class BinarySearchTree(BinaryTree):
 
 
 if __name__ == '__main__':
-    bt = BinaryTree()
-    bt.root = Node(6)
-    bt.root.left = Node(5)
-    bt.root.right = Node(-1)
+    pass
+    # bt = BinaryTree()
+    # bt.root = Node(6)
+    # bt.root.left = Node(5)
+    # bt.root.right = Node(-1)
+    # bt.root.right.left = Node(8)
+    # bt.root.right.right = Node(14)
+  
 
-    print(bt.preOrder())
-    print(bt.inOrder())
-    print(bt.postOrder())
+    # print(bt.find_maximum_value())
 

@@ -28,3 +28,5 @@ Big O space complexity : O(w).
 ## Solution
 
 ![whiteboard](../../assets/trees.png)
+
+![whiteboard](../../assets/trees2.png)
