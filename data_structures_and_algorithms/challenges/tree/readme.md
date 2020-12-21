@@ -30,3 +30,5 @@ Big O space complexity : O(w).
 ![whiteboard](../../assets/trees.png)
 
 ![whiteboard](../../assets/trees2.png)
+
+![whiteboard](../../assets/trees3.png)
