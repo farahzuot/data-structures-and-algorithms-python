@@ -1,6 +1,6 @@
 # Insertion Sort
 
-    Pseudocode
+  Pseudocode
     
     InsertionSort(int[] arr)
   
