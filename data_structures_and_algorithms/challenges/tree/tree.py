@@ -1,5 +1,59 @@
 class Node:
     def __init__(self,value):
+        self.value = value
+        self.next = None
+
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+
+    def enqueue(self,data): # 1 -> 2 -> none
+        node = Node(data)
+        if self.front == None:
+            self.front = node # 1 - >
+        else:
+            self.rear = self.front 
+            current = self.rear # curr = node(1)
+            while current:
+                if current.next == None:
+                    current.next = node
+                    break               
+                current = current.next
+
+    def dequeue(self):
+        try:
+            self.front = self.front.next
+        except AttributeError:
+            return ('Empty stack!')
+    
+    def peek(self):
+        try:
+            return self.front.value
+        except AttributeError:
+            return ('Empty stack!')
+    
+    def isEmpty(self):
+        if self.front:
+            return False
+        else:
+            return True
+
+    def __str__(self):
+        result=''
+        current = self.front
+        if current == None:
+            result = 'Empty stack!'
+        else:
+            while current:
+                result += f'{current.value} -> '
+                current = current.next
+            result += 'None'
+        return result
+        
+
+class NodeTwo:
+    def __init__(self,value):
         self.value=value
         self.right=None
         self.left=None
@@ -68,25 +122,42 @@ class BinaryTree():
         except AttributeError:
             return []
 
+    def breadthFirst(self,result =[]): 
+        try: 
+            queue = Queue()
+            queue.enqueue(self.root)    
+            while queue.front:
+                curr = queue.front
+                if curr.value.left:
+                    queue.enqueue(curr.value.left)
+                if curr.value.right:
+                    queue.enqueue(curr.value.right)
+                result.append(curr.value.value)
+                queue.dequeue()
+            return result
+        except AttributeError:
+            return 'Empty tree'
+
+
 
 
 class BinarySearchTree(BinaryTree):
     def add(self,value):
         self.arr.append(value)
         if self.root == None:
-            self.root=Node(value)
+            self.root=NodeTwo(value)
         else:
             def internal(node):
                 if value < node.value:
                     if node.left == None:
-                        node.left = Node(value)
+                        node.left = NodeTwo(value)
                         return
                     else:
                         internal(node.left)
 
                 else:
                     if node.right == None:
-                        node.right = Node(value)
+                        node.right = NodeTwo(value)
                         return
                     else:
                         internal(node.right)
@@ -101,17 +172,15 @@ class BinarySearchTree(BinaryTree):
         else:
             return False
 
-
-
-if __name__ == '__main__':
-    pass
-    # bt = BinaryTree()
-    # bt.root = Node(6)
-    # bt.root.left = Node(5)
-    # bt.root.right = Node(-1)
-    # bt.root.right.left = Node(8)
-    # bt.root.right.right = Node(14)
   
-
-    # print(bt.find_maximum_value())
+if __name__ == '__main__':
+    
+    bt = BinaryTree()
+    bt.root = NodeTwo(6)
+    bt.root.left = NodeTwo(5)
+    bt.root.right = NodeTwo(-1)
+    bt.root.right.left = NodeTwo(8)
+    bt.root.right.right = NodeTwo(14)
+  
+    print(bt.breadthFirst())
 
