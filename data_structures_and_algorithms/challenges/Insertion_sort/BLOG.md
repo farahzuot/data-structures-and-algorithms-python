@@ -45,9 +45,11 @@ in the fourth itiration the i = 4 , j = 3. then it will start comaring the eleme
 
 fifth itiration 
 
+![fifth](fifth.png)
+
 in the fifth itiration the i = 5 , j = 4. then it will start comaring the element with all previous ones to put it in the right place, so 42 comparing with 15. the 15 is smaller than 42 , and it smaller than 23 and smaller than 16 but its larger than 8 so it will be placed in index 2 and other elements will be shifted to the right.
 
-![fifth](fifth.png)
+
 
 
 ### Efficency
