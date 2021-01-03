@@ -1,6 +1,8 @@
 # Insertion Sort
 
-  InsertionSort(int[] arr)
+    Pseudocode
+    
+    InsertionSort(int[] arr)
   
     FOR i = 1 to arr.length
     
