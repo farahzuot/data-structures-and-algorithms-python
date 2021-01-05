@@ -1,6 +1,7 @@
 # Insertion Sort
 
   Pseudocode
+  
     ALGORITHM QuickSort(arr, left, right)
     if left < right
         // Partition the array by setting the position of the pivot value 
