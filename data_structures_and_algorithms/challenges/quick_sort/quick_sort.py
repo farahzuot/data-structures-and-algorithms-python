@@ -1,10 +1,8 @@
 def quickSort(arr, left, right): 
-
-  
     if left < right: # 0 < 5 || 0 < 1 || 3 < 5
         # print(left,right)
         pivot = partition(arr, left, right) 
-        print (arr)
+        # print (arr)
         # pivot = partition([8,4,23,42,16,15], 0, 5) >> 2. [8,4,15,42,16,23]
         # || pivot = partition([8,4,15,42,16,23], 0, 1) >> 0. [4,8,15,42,16,23]
         # || pivot = partition([4,8,15,42,16,23], 3, 5) >> 4. [4,8,15,16,23,42]
@@ -18,7 +16,6 @@ def quickSort(arr, left, right):
         # quickSort([4,8,15,42,16,23], 1, 1) break if statement. >> back to right =5 and pivot =2.
         # || ([4,8,15,42,16,23], 3, 5)
         # || ([4,8,15,42,16,23], 4, 5)
-
     return arr
 
 
