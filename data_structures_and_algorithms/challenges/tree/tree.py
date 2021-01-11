@@ -172,15 +172,3 @@ class BinarySearchTree(BinaryTree):
         else:
             return False
 
-  
-if __name__ == '__main__':
-    
-    bt = BinaryTree()
-    bt.root = NodeTwo(6)
-    bt.root.left = NodeTwo(5)
-    bt.root.right = NodeTwo(-1)
-    bt.root.right.left = NodeTwo(8)
-    bt.root.right.right = NodeTwo(14)
-  
-    print(bt.breadthFirst())
-
