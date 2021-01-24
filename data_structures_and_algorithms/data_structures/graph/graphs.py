@@ -28,3 +28,17 @@ class Graph:
     def size(self):
         return len(self.adjacency_list)
 
+    def bfs(self, start_node):
+        nodes = []
+        visited = set() 
+        breadth = Queue()
+        breadth.enqueue(start_node) 
+        visited.add(start_node) 
+        while len(breadth)>0:
+            node = breadth.dequeue() 
+            nodes.append(node) 
+            for n in self.adjacency_list[node]:
+                if n not in visited: 
+                    breadth.enqueue(n) 
+                    visited.add(n)
+        return nodes
